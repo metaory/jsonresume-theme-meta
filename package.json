@@ -1,0 +1,26 @@
+{
+  "name": "jsonresume-theme-meta",
+  "version": "0.0.1",
+  "description": "yet another JSON Resume theme with live reload and docker",
+  "main": "src/meta-tpl.json",
+  "scripts": {
+    "dev": "docker-compose run node /bin/bash -c 'yarn _make_html && yarn _make_pdf' && docker-compose up",
+
+    "_make_html": "hackmyresume         -d build    src/meta-tpl.json TO dist/meta-cv.html --theme ./src/fresh-theme-henlo",
+    "_make_pdf":  "node ./scripts/generate-pdf.js ./dist/meta-cv.html  ./dist/meta-cv.pdf"
+  },
+  "author": "metaory",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "0.18.1",
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.2",
+    "gulp-flatten": "^0.4.0",
+    "hackmyresume": "1.9.0-beta",
+    "lodash": "4.17.13"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "puppeteer": "^1.19.0"
+  }
+}
