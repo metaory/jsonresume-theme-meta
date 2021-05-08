@@ -1,7 +1,5 @@
-node_modules/
-/dist
-/.tmp
+node_modules
+dist
+.tmp
 
-# Some FRESH documents needs to remain out of the repository for privacy
-/src/private-*.json
 

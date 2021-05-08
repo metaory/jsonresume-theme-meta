@@ -1,4 +1,4 @@
-# retacv
+# metacv
 
 yet another JSON Resume theme with live reload and docker
 
