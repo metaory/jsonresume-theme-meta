@@ -4,10 +4,10 @@
   "description": "yet another JSON Resume theme with live reload and docker",
   "main": "src/meta-tpl.json",
   "scripts": {
-    "dev": "docker-compose run node /bin/bash -c 'yarn _make_html && yarn _make_pdf' && docker-compose up",
-
-    "_make_html": "hackmyresume         -d build    src/meta-tpl.json TO dist/meta-cv.html --theme ./src/fresh-theme-henlo",
-    "_make_pdf":  "node ./scripts/generate-pdf.js ./dist/meta-cv.html  ./dist/meta-cv.pdf"
+    "dev": "docker-compose run node /bin/bash -c 'yarn _make_html && yarn _make_pdf' && yarn _publish && docker-compose up",
+    "_make_html": "hackmyresume -d build src/private-*.json TO dist/meta-cv.html --theme ./src/fresh-theme-henlo",
+    "_make_pdf":  "node ./scripts/make-pdf.js ./dist/meta-cv.html  ./dist/meta-cv.pdf",
+    "_publish":  "cp ./dist/meta-cv.pdf ./dist/meta-cv_$(jq -r '.version' ./src/private-meta.json).pdf"
   },
   "author": "metaory",
   "license": "ISC",

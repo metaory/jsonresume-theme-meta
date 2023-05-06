@@ -5,8 +5,20 @@
         <h3 class="hvpod-title">{{ language }}</h3>
       </div>
       <div class="hvpod-block">
-        {{{ summary }}}
+        <!-- <i class="ri-home-{{score}}-fill"></i> -->
+        <span style="display: flex; align-items: center;">
+        <!-- <i class="ti ti-antenna-bars-{{score}}"></i> -->
+        <!-- <i class="ti ti-box-multiple-{{score}}"></i> -->
+        <i class="ti ti-tallymark-{{score}}"></i>
+        {{#if expert}}
+          <i class="ti ti-tallymarks"></i>
+        {{/if}}
+        <div>{{{ summary }}}</div>
+        </span>
       </div>
     </div>
   {{/inline}}
 {{/molecule-section}}
+<script type="module">
+  console.log('@@@@@@@@@@@@@@@@@@')
+</script>

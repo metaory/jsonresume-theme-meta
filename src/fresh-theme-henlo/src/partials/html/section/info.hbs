@@ -1,17 +1,17 @@
 {{#*inline "myPartial"}}
   <dl class="henlo-list henlo-list--info_contact">
+    {{#has 'contact.phone'}}
+      <div class="henlo-list-item henlo-list-item--phone">
+        <dt>T</dt>
+        <dd>{{ r.contact.phone }}</dd>
+      </div>
+    {{/has}}
     {{#has 'contact.email'}}
       <div class="henlo-list-item henlo-list-item--email">
         <dt>@</dt>
         <dd>
           <a href="mailto:{{{ RAW.contact.email }}}">{{ RAW.contact.email }}</a>
         </dd>
-      </div>
-    {{/has}}
-    {{#has 'contact.phone'}}
-      <div class="henlo-list-item henlo-list-item--phone">
-        <dt>T</dt>
-        <dd>{{ r.contact.phone }}</dd>
       </div>
     {{/has}}
     {{#has 'contact.website'}}
@@ -27,6 +27,7 @@
   </dl>
 {{/inline}}
 
+
 {{#*inline "myPartial2"}}
   <dl class="henlo-list henlo-list--info_contact">
     {{#each r.social}}
@@ -38,14 +39,26 @@
   </dl>
 {{/inline}}
 
+{{#*inline "myPartial3"}}
+  <dl class="henlo-list henlo-list--info_contact">
+    <div class="henlo-list-item">
+        <dt>class</dt>
+        <dd><strong>{{ RAW.info.characterClass }}</strong></dd>
+    </div>
+    <div class="henlo-list-item">
+        <dt>city</dt>
+        <dd>{{ RAW.location.city }}</dd>
+    </div>
+  </dl>
+{{/inline}}
+
+
 {{#has 'info.brief'}}
   <section class="section section--header henlo-header">
     <div class="section-element--img">
-      <span>⌬</span>
 
-      <!-- <span>R</span> -->
-      <!-- <span>N</span> -->
-      <!-- <span>+</span> -->
+    <!-- <span><img width="48" src="{{ r.info.img }}"></img></span> -->
+    <span><img width="48" src="https://ca.slack-edge.com/T01M3PQRX9C-U03SHH80JTG-cfd71910e750-512"></img></span>
     </div>
     <div class="section-block section-block--main">
       <h1 class="section-title">
@@ -53,10 +66,15 @@
       </h1>
       <p class="section-subtitle">
         {{ r.info.label }}
+        <!-- <small> -->
+        <!-- {{ r.info.characterClass }} -->
+        <!-- {{ r.location.city }} -->
+        <!-- </small> -->
       </p>
     </div>
     {{#has "info.brief"}}
       <div class="section-block section-block--summary">
+        <span class="section-banner">{{{ r.info.banner }}}</span>
         <p class="section-text">{{{ r.info.brief }}}</p>
       </div>
     {{/has}}
@@ -66,6 +84,9 @@
     </div>
     <div class="section-block section-block--contact">
       {{> myPartial2 }}
+    </div>
+    <div class="section-block section-block--contact">
+      {{> myPartial3 }}
     </div>
   </section>
 {{/has}}
