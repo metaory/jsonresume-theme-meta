@@ -4,7 +4,7 @@ FROM node:lts
 # 10.17.0". Got "8.17.0
 
 
-LABEL maintainer="Eric Bidelman <ebidel@>"
+LABEL maintainer="metaory <metaory@gmail.com>"
 
 # Run this like so:
 # docker run -i --rm --cap-add=SYS_ADMIN \
