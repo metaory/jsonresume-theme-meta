@@ -1,5 +1,7 @@
 node_modules/
 /dist/*.pdf
+/dist/*.html
+/dist/*.css
 /.tmp
 /src/private-*.json
 

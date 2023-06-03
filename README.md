@@ -9,6 +9,9 @@ yet another JSON Resume theme with live reload and docker
 - Docker
 
 ```bash
+# Clone this repo
+git clone git@github.com:metaory/jsonresume-theme-meta.git
+
 # Install dependencies
 npm install
 
